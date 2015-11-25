@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ControleursPython/ControleursPython.iml" filepath="$PROJECT_DIR$/ControleursPython/ControleursPython.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huby.iml" filepath="$PROJECT_DIR$/huby.iml" />
+    </modules>
+  </component>
+</project>
