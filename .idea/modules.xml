@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ControleursPython/ControleursPython.iml" filepath="$PROJECT_DIR$/ControleursPython/ControleursPython.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dashboard/Dashboard.iml" filepath="$PROJECT_DIR$/Dashboard/Dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/huby.iml" filepath="$PROJECT_DIR$/huby.iml" />
     </modules>
   </component>
