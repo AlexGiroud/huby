@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 		<title>Huby</title>
@@ -14,7 +13,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body class="landing">
-<script defer>
+	<script defer>
 $(document).ready(function(){
 	var ctx = document.getElementById("myChart").getContext("2d");
 var data = {
@@ -78,15 +77,13 @@ var myBarChart = new Chart(ctx).Bar(data, options);
 });
 
 
-</script>
+	</script>
 
 
-		<!-- Header -->
 			<header id="header" class="alt">
 				<a href="#nav">Menu</a>
 			</header>
 
-		<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
 					<li><a href="index.php">Accueil</a></li>
@@ -95,19 +92,13 @@ var myBarChart = new Chart(ctx).Bar(data, options);
 				</ul>
 			</nav>
 
-		<!-- Banner -->
 			<section id="banner">
 				<i class="icon fa-diamond"></i>
 				<h2>Huby</h2>
 				<p>Votre pointeuse intelligente</p>
-				<ul class="actions">
-				<!--
-					<li><a href="#" class="button big special">Learn More</a></li>
-				!-->
-				</ul>
+			
 			</section>
 
-		<!-- One -->
 			<section id="one" class="wrapper style1">
 				<div class="inner">
 					<article class="feature left">
@@ -123,38 +114,27 @@ var myBarChart = new Chart(ctx).Bar(data, options);
 						</div>
 					</article>
 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>
+					$(document).ready(function(){
+					$('#nbVisiteur').load('nb.php');
+					setInterval(function(){
+					$('#nbVisiteur').load('nb.php');
+						}, 3000);
+							});
+		</script>
+				<article class="feature right">
+				<canvas id="myChart" width="350" height="350"></canvas>
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-			$('#nbVisiteur').load('nb.php');
-			setInterval(function(){
-
-$('#nbVisiteur').load('nb.php');
-			}, 3000);
-		});
-	</script>
-
-
-
-
-					<article class="feature right">
-<canvas id="myChart" width="350" height="350"></canvas>
-
-	<div class="content">
-							<h2>Nombre de visiteurs : <a><?php echo '<a id="nbVisiteur"></a>';?></a></h2>
-
-
-
-							<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+					<div class="content">
+						<h2>Nombre de visiteurs : <a><?php echo '<a id="nbVisiteur"></a>';?></a></h2>
+						<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
 						
-						</div>
+					</div>
 					</article>
 				</div>
 			</section>
 
-		<!-- Two -->
 			<section id="two" class="wrapper special">
 				<div class="inner">
 					<header class="major narrow">
@@ -175,18 +155,6 @@ $('#nbVisiteur').load('nb.php');
 				</div>
 			</section>
 
-		<!-- Three -->
-
-
-
-
-
-
-
-
-
-
-		<!-- Four -->
 			<section id="four" class="wrapper style2 special">
 				<div class="inner">
 					<header class="major narrow">
@@ -214,14 +182,16 @@ $('#nbVisiteur').load('nb.php');
 					</form>
 				</div>
 			</section>
-
-
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<footer id="footer">
+				<div class="inner">
+				<p class="pull-right"><a href="#">Remonter en haut</a></p>
+        		<p>© 2015 Huby</p>
+				</div>
+			</footer>
 
 	</body>
 </html>
