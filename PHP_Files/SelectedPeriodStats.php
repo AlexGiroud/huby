@@ -7,14 +7,18 @@
  */
 $dateStart = null;
 $dateEnd = null;
+$queryChoice = null;
 
 function checkDateFormat()
 {
     global $dateStart;
     global $dateEnd;
+    global $queryChoice;
+
 
     $dateStart = $_GET["start"];
     $dateEnd = $_GET["end"];
+    $queryChoice = $_GET["flow"];
 
 
 
@@ -40,12 +44,17 @@ if($validDate == true) {
     $huby_db->setAttribute(PDO::ATTR_ERRMODE,
         PDO::ERRMODE_EXCEPTION);
 
-    $queryString = "SELECT * from Entry where Date between '".$dateStart."' and '".$dateEnd."'";
-
+    switch($queryChoice) {
+        case "in":
+            $queryString = "SELECT * from Entry where Date between '".$dateStart."' and '".$dateEnd."'";
+            break;
+        case "out":
+            $queryString = "SELECT * from Exit where Date between '".$dateStart."' and '".$dateEnd."'";
+    }
     $PDOresult = $huby_db->query($queryString);
 
     $result = $PDOresult->fetch();
-
-    echo $result[0];
+    $entry_list = json_encode($result);
+    echo $entry_list;
 }
 
