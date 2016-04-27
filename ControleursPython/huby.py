@@ -1,5 +1,6 @@
 #!/usr/bin/python3.5
 import serial
+import RPi.GPIO as GPIO
 import http.client, urllib.request
 from time import localtime, strftime
 import re
