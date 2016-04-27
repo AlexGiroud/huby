@@ -20,12 +20,12 @@ GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 #Leds
 GPIO.setwarnings(False)
-GPIO.setup(23, GPIO.OUT)
-GPIO.setup(24, GPIO.OUT)
-GPIO.setup(25, GPIO.OUT)
-GPIO.output(23, GPIO.LOW)
-GPIO.output(24, GPIO.LOW)
-GPIO.output(25, GPIO.LOW)
+GPIO.setup(config["LED"]["Green"], GPIO.OUT)
+GPIO.setup(config["LED"]["Blue"], GPIO.OUT)
+GPIO.setup(config["LED"]["Red"], GPIO.OUT)
+GPIO.output(config["LED"]["Green"], GPIO.LOW)
+GPIO.output(config["LED"]["Blue"], GPIO.LOW)
+GPIO.output(config["LED"]["Red"], GPIO.LOW)
 
 #RFID
 port = serial.Serial(config["SERIAL"]["Interface"], baudrate=9600)
@@ -45,18 +45,18 @@ class RFID(Thread):
                 print(recivedString)
                 if prog.match(recivedString):
                     print("matched")
-                    GPIO.output(23, GPIO.HIGH)
+                    GPIO.output(config["LED"]["Green"], GPIO.HIGH)
                     urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=in")
                     time.sleep(1)
-                    GPIO.output(23, GPIO.LOW)
+                    GPIO.output(config["LED"]["Green"], GPIO.LOW)
                     port.flushInput()
                 else:
                     print('invalid rfid detection')
         except KeyboardInterrupt:
             GPIO.cleanup()
-            GPIO.output(23, GPIO.LOW)
-            GPIO.output(24, GPIO.LOW)
-            GPIO.output(25, GPIO.LOW)
+            GPIO.output(config["LED"]["Green"], GPIO.LOW)
+            GPIO.output(config["LED"]["Blue"], GPIO.LOW)
+            GPIO.output(config["LED"]["Red"], GPIO.LOW)
 
 class Button(Thread):
     def __init__(self):
@@ -66,14 +66,14 @@ class Button(Thread):
         while 1:
             try:
                 GPIO.wait_for_edge(18, GPIO.FALLING)
-                GPIO.output(25, GPIO.HIGH)
+                GPIO.output(config["LED"]["Red"], GPIO.HIGH)
                 test = urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=out")
                 time.sleep(1)
-                GPIO.output(25, GPIO.LOW)
+                GPIO.output(config["LED"]["Red"], GPIO.LOW)
             except KeyboardInterrupt:
-                GPIO.output(23, GPIO.LOW)
-                GPIO.output(24, GPIO.LOW)
-                GPIO.output(25, GPIO.LOW)
+                GPIO.output(config["LED"]["Green"], GPIO.LOW)
+                GPIO.output(config["LED"]["Blue"], GPIO.LOW)
+                GPIO.output(config["LED"]["Red"], GPIO.LOW)
                 GPIO.cleanup()
 
 # Création des threads
@@ -85,13 +85,13 @@ thread_1.start()
 thread_2.start()
 
 # Allumage Led activité
-GPIO.output(24, GPIO.HIGH)
+GPIO.output(config["LED"]["Blue"], GPIO.HIGH)
 
 # Attend que les threads se terminent
 thread_1.join()
 thread_2.join()
 
 #Fin programme
-GPIO.output(23, GPIO.LOW)
-GPIO.output(24, GPIO.LOW)
-GPIO.output(25, GPIO.LOW)
+GPIO.output(config["LED"]["Green"], GPIO.LOW)
+GPIO.output(config["LED"]["Blue"], GPIO.LOW)
+GPIO.output(config["LED"]["Red"], GPIO.LOW)
