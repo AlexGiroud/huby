@@ -78,14 +78,37 @@
 						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
 					</header>
 					<div class="image-grid">
+						<!--<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
-						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
-						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
+						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>-->
+						<div id="images-box">
+							<div class="holder">
+								<div id="image-1" class="image-lightbox">
+									<span class="close"><a href="#">X</a></span>
+									<img src="1.jpg" alt="earth!">
+									<a class="expand" href="#image-1"></a>
+								</div>
+							</div>
+							<div class="holder">
+								<div id="image-2" class="image-lightbox">
+									<span class="close"><a href="#">X</a></span>
+									<img src="2.jpg" alt="earth!">
+									<a class="expand" href="#image-2"></a>
+								</div>
+							</div>
+							<div class="holder">
+								<div id="image-3" class="image-lightbox">
+									<span class="close"><a href="#">X</a></span>
+									<img src="3.jpg" alt="earth!">
+									<a class="expand" href="#image-3"></a>
+								</div>
+							</div>
+						</div>
 					</div>
 					
 				</div>
