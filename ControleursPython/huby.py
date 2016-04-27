@@ -33,20 +33,26 @@ class RFID(Thread):
         Thread.__init__(self)
 
     def run(self):
-        while True:
-            rcv = port.read(14)
-            recivedString = rcv.decode('utf-8')
-            recivedString = recivedString[1:-1]
-            print(recivedString)
-            if prog.match(recivedString):
-                print("matched")
-                urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=in")
-                GPIO.output(24, GPIO.HIGH)
-                time.sleep(1)
-                GPIO.output(24, GPIO.LOW)
-                port.flushInput()
-            else:
-                print('invalid rfid detection')
+        try:
+            while True:
+                rcv = port.read(14)
+                recivedString = rcv.decode('utf-8')
+                recivedString = recivedString[1:-1]
+                print(recivedString)
+                if prog.match(recivedString):
+                    print("matched")
+                    GPIO.output(23, GPIO.HIGH)
+                    urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=in")
+                    time.sleep(1)
+                    GPIO.output(23, GPIO.LOW)
+                    port.flushInput()
+                else:
+                    print('invalid rfid detection')
+        except KeyboardInterrupt:
+            GPIO.cleanup()
+            GPIO.output(23, GPIO.LOW)
+            GPIO.output(24, GPIO.LOW)
+            GPIO.output(25, GPIO.LOW)
 
 class Button(Thread):
     def __init__(self):
@@ -56,11 +62,14 @@ class Button(Thread):
         while 1:
             try:
                 GPIO.wait_for_edge(18, GPIO.FALLING)
-                test = urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=out")
                 GPIO.output(25, GPIO.HIGH)
+                test = urllib.request.urlopen(config["SERVER"]["Url"]+"AddEntry.php?flow=out")
                 time.sleep(1)
                 GPIO.output(25, GPIO.LOW)
             except KeyboardInterrupt:
+                GPIO.output(23, GPIO.LOW)
+                GPIO.output(24, GPIO.LOW)
+                GPIO.output(25, GPIO.LOW)
                 GPIO.cleanup()
 
 # Création des threads
@@ -72,7 +81,7 @@ thread_1.start()
 thread_2.start()
 
 # Allumage Led activité
-GPIO.output(23, GPIO.HIGH)
+GPIO.output(24, GPIO.HIGH)
 
 # Attend que les threads se terminent
 thread_1.join()
@@ -80,3 +89,5 @@ thread_2.join()
 
 #Fin programme
 GPIO.output(23, GPIO.LOW)
+GPIO.output(24, GPIO.LOW)
+GPIO.output(25, GPIO.LOW)
