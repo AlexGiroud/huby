@@ -34,10 +34,11 @@
 
 					<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
 
-					<p align="justify">
-						L'objectif est de construire un système permettent de faciliter la gestion d’un fablab ou d’un espace de coworking. Développé initialement dans le cadre du concours remix my Energy d’EDF. <br>
-						Il a pour premier objectif de mesurer la consommation électrique et le nombre d’occupants puis de rendre l’information disponible via une interface web. <br>
-						L’objectif est aussi de le développer collaborativement entre espaces et structures pour faciliter la coopération entre les espaces.
+					<p>
+						L'objectif est de construire un système permettent de faciliter la gestion d’un fablab ou d’un espace de coworking. Développé initialement dans le cadre du concours remix my Energy d’EDF.
+					</p>
+					<p>
+						Il a pour premier objectif de mesurer la consommation électrique et le nombre d’occupants puis de rendre l’information disponible via une interface web.L’objectif est aussi de le développer collaborativement entre espaces et structures pour faciliter la coopération entre les espaces.
 					</p>
 					<p>
 						Le projet vous plaît ? Parlez-en autour de vous, chaque partage, chaque tweet peut faire la différence, et permet de faire connaître le projet, et donc de le faire avancer. Merci d'avance !

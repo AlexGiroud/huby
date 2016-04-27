@@ -90,23 +90,24 @@
 							<div class="holder">
 								<div id="image-1" class="image-lightbox">
 									<span class="close"><a href="#">X</a></span>
-									<img src="1.jpg" alt="earth!">
+									<img src="images/huby.jpg" alt="earth!">
 									<a class="expand" href="#image-1"></a>
 								</div>
 							</div>
 							<div class="holder">
 								<div id="image-2" class="image-lightbox">
 									<span class="close"><a href="#">X</a></span>
-									<img src="2.jpg" alt="earth!">
+									<img src="images/2.jpg" alt="earth!">
 									<a class="expand" href="#image-2"></a>
 								</div>
 							</div>
 							<div class="holder">
 								<div id="image-3" class="image-lightbox">
 									<span class="close"><a href="#">X</a></span>
-									<img src="3.jpg" alt="earth!">
+
+									<img src="images/3.jpg" alt="earth!">
 									<a class="expand" href="#image-3"></a>
-								</div>
+													</div>
 							</div>
 						</div>
 					</div>
