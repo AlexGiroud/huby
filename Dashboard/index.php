@@ -120,7 +120,7 @@ var myBarChart = new Chart(ctx).Bar(data, options);
 					$('#nbVisiteur').load('nb.php');
 					setInterval(function(){
 					$('#nbVisiteur').load('nb.php');
-						}, 3000);
+						}, 1000);
 							});
 		</script>
 				<article class="feature right">

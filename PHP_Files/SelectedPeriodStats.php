@@ -46,14 +46,15 @@ if($validDate == true) {
 
     switch($queryChoice) {
         case "in":
-            $queryString = "SELECT * from Entry where Date between '".$dateStart."' and '".$dateEnd."'";
+            $queryString = "SELECT * from Entry where Date between '".$dateStart."' and '".$dateEnd."' order by `Date` asc";
             break;
         case "out":
-            $queryString = "SELECT * from Exit where Date between '".$dateStart."' and '".$dateEnd."'";
+            $queryString = "SELECT * from Exit where Date between '".$dateStart."' and '".$dateEnd."' order by `Date` asc";
     }
     $PDOresult = $huby_db->query($queryString);
 
-    $result = $PDOresult->fetch();
+    $result = $PDOresult->fetchAll();
+    var_dump($result);
     $entry_list = json_encode($result);
     echo $entry_list;
 }
