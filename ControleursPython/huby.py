@@ -55,8 +55,8 @@ class Button(Thread):
                 GPIO.cleanup()
 
 # Création des threads
-thread_1 = RFID("1")
-thread_2 = Button("2")
+thread_1 = RFID()
+thread_2 = Button()
 
 # Lancement des threads
 thread_1.start()
