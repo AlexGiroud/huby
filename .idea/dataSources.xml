@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1223541503">
+  <component name="DataSourceManagerImpl" format="xml" hash="1227884398">
     <data-source source="LOCAL" name="Sqlite (Xerial) - HubyDb.db" uuid="2429170c-18ee-4408-a840-b5dd7c765fa4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/PHP_Files/HubyDb.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Sqlite (Xerial) - HubyDb.db [2]" uuid="8867f7a0-e6cd-4378-a33a-63cc8a4eb8a3">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
