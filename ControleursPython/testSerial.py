@@ -1,36 +1,36 @@
 #!/usr/bin/python
 import serial
-import urllib.parse
-import urllib.request
+import urllib
 from time import localtime, strftime
-import re
+#import re
 import time
+import configparser
 
-port = serial.Serial("/dev/ttyAMA0", baudrate=9600)
-#prog = re.compile('^[A-Z0-9a-z]{10}')
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+port = serial.Serial(config["SERIAL"]["Interface"], baudrate=9600, timeout=3.0)
+#port = serial.Serial("ttyAMA0", baudrate=9600, timeout=3.0)
+prog = re.compile("^[A-Z0-9a-z]{10}$")
 
 while True:
-    rcv = port.read(14)
-    receivedString = rcv.decode('utf-8')
-    #print(len(receivedString))
-    #temp = re.match(prog, receivedString)
-    #values = {'flow' : 'in'}
-    #data = urllib.parse.urlencode(values)
-    #data = data.encode('ascii')
-    if len(receivedString)== 14:
-        #req = urllib.request.Request("localhost/PHP_FILES/AddEntry.php",data)
-        #test = urllib.request.urlopen(req)
-        fichier = open("Dashboard/action.txt", "r")
-        stri = fichier.read()
-        nb = int(stri) + 1
-        str2 = str(nb)
-        fichier.close()
-        fichier = open("Dashboard/action.txt", "w")
-        fichier.write(str2)
-        fichier.close()
-        print(receivedString)
-        #time.sleep(1)
+    rcv = port.read(10)
+    recivedString = rcv.decode('utf-8').replace('\n','').replace('\r','').replace('\r\n','')
+    print(recivedString)
+    if prog.find(recivedString):
+        print("matched")
+        params = urllib.urlencode({'flow': 'in'})
+        headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
+        conn = httplib.HTTPConnection(config["SERVER"]["Url"]+"AddEntry.php:80")
+        try:
+            conn.request("GET", "", params, headers)
+            response = conn.getresponse()
+            data = response.read()
+            conn.close()
+        except:
+            print "Connection failed"
+        #        test = urllib.urlopen(config["SERVER"]["Url"]+"action.controller.php?action=motion")
+        time.sleep(1)
         port.flushInput()
     else:
         print('invalid rfid detection')
-        print(receivedString)
