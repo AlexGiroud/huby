@@ -51,29 +51,29 @@ Alors j'ai pris le problème à l'envers : Et si au lieu que ça soit l'homme qu
 <h1>Imaginons un scénario :</h1>
 </p>
 <p>
-Il est 8H, Gladys me réveille car elle sait qu'à 9H je dois aller travailler, et que je mets, selon mes préférences, 30 minutes pour me préparer, et que selon l'état actuel du trafic, je vais mettre 30 minutes en voiture pour aller au bureau. Elle a vu grâce à une API de météo qu'il pleut dehors, et en profite pour me le signaler au réveil.
+Il est 8H, Huby me réveille car elle sait qu'à 9H je dois aller travailler, et que je mets, selon mes préférences, 30 minutes pour me préparer, et que selon l'état actuel du trafic, je vais mettre 30 minutes en voiture pour aller au bureau. Elle a vu grâce à une API de météo qu'il pleut dehors, et en profite pour me le signaler au réveil.
 Dès que je sors de mon lit, elle détecte un mouvement dans la pièce et coupe le réveil, allume la lumière, et lance une playlist calme, allume la lumière de la pièce, et ouvre les volets.
-Il est 8H45, je sors de chez moi pour aller travailler, Gladys détecte que je ne suis plus là, elle coupe lumière et la musique. Cependant, après le boulot, je sors chez des amis, et reste dormir chez eux. Gladys sait que je ne suis pas rentré (pas de mouvement n'a été détecté), et désactive donc le réveil du lendemain, car pas besoin de sonner si je ne dors pas chez moi, et que mon appartement est vide !
-Le lendemain, 7H30, Gladys m'envoie une notification sur mon portable pour me rappeler qu'a 9H je dois être au bureau. Elle a prit en compte la localisation de l'appartemment de mes amis, et me réveille plus tôt pour que je sois à l'heure.
-Il est 19H, je rentres du bureau, Gladys allume la lumière, me souhaite la bienvenue, et me notifie les messages que j'ai reçu en mon absence.
+Il est 8H45, je sors de chez moi pour aller travailler, Huby détecte que je ne suis plus là, elle coupe lumière et la musique. Cependant, après le boulot, je sors chez des amis, et reste dormir chez eux. Huby sait que je ne suis pas rentré (pas de mouvement n'a été détecté), et désactive donc le réveil du lendemain, car pas besoin de sonner si je ne dors pas chez moi, et que mon appartement est vide !
+Le lendemain, 7H30, Huby m'envoie une notification sur mon portable pour me rappeler qu'a 9H je dois être au bureau. Elle a prit en compte la localisation de l'appartemment de mes amis, et me réveille plus tôt pour que je sois à l'heure.
+Il est 19H, je rentres du bureau, Huby allume la lumière, me souhaite la bienvenue, et me notifie les messages que j'ai reçu en mon absence.
 Ainsi, au lieu d'un système passif qui attend des commandes de l'utilisateur, nous avons ici un véritable assistant qui aide l'utilisateur au quotidien en prenant des iniatives. Et ce n'est pas futuriste ! Toutes les technos citées ci-dessus existent...
 </p>
 <p>
-Après une première version sortie il y a 1 an, Gladys revient avec une nouvelle version 100% réécrite en full Node.js, vous pouvez la téléchargez gratuitement et l'installer chez vous.
+Après une première version sortie il y a 1 an, Huby revient avec une nouvelle version 100% réécrite en full Node.js, vous pouvez la téléchargez gratuitement et l'installer chez vous.
 </p>
 <p>
 Le projet vous plaît ? Parlez-en autour de vous, chaque partage, chaque tweet peut faire la différence, et permet de faire connaître le projet, et donc de le faire avancer. Merci d'avance !
 </p>
 <p>
 <h3>Le matériel</h3>
-Gladys étant écrite en full Node.js, elle fonctionne sur à peu près toutes les plateformes : Linux, Mac, Windows. ( et même sur un serveur !) Cependant, pour un maximum d'interactions domotique, il est plus intéressant d'installer Gladys sur un Raspberry Pi.
+Huby étant écrite en full Node.js, elle fonctionne sur à peu près toutes les plateformes : Linux, Mac, Windows. ( et même sur un serveur !) Cependant, pour un maximum d'interactions domotique, il est plus intéressant d'installer Huby sur un Raspberry Pi.
 </p>
 <p>
 <h3>Le Raspberry Pi</h3>
-Pourquoi Gladys sur un Raspberry Pi ?
+Pourquoi Huby sur un Raspberry Pi ?
 </p>
 <p>
-Le prix : 30€ environ pour un Raspberry Pi 2. Un Raspberry Pi peut être allumé en continu, sans faire un seul bruit. Il peut donc accueillir Gladys en se faisant oublier.
+Le prix : 30€ environ pour un Raspberry Pi 2. Un Raspberry Pi peut être allumé en continu, sans faire un seul bruit. Il peut donc accueillir Huby en se faisant oublier.
 Un Raspberry Pi consomme très peu, environ 3€ par an d'électricité si il est branché H24. Loin de la consommation d'un PC 'classique' !
 Les ports GPIOs du Raspberry permettent d'avoir des interactions avec du matériel électronique, et donc de faire de la domotique.
 <h3>Un Arduino</h3>
@@ -87,12 +87,12 @@ Pour pouvoir contrôler des appareils divers et variés (lampes de bureaux, post
 Comment savoir si l'utilisateur est chez lui ? Dans quelle pièce il est ? Rien de mieux qu'un détecteur de mouvement sans-fil standard d'alarme pour détecter les mouvements dans la maison, et donc la présence d'un utilisateur.
 </p>
 <p>
-Au niveau de la réception, elle se fait avec un récepteur 433Mhz branché à un arduino, qui prévient Gladys via le port USB du Raspberry lorqu'il y a un mouvement.
+Au niveau de la réception, elle se fait avec un récepteur 433Mhz branché à un arduino, qui prévient Huby via le port USB du Raspberry lorqu'il y a un mouvement.
 </p>
 <h3>Les lumières</h3>
 Comment contrôler l'éclairage de la maison de façon plus poussée qu'avec les prises télécommandées qui ne permettent que de faire 'On' et 'Off' ? Avec des ampoules connectées ! Les plus connues sont les Philips Hue, mais malheureusement elles sont très chère. Heureusement on trouve des équivalents chinois pour environ 20€. Ces lampes sont contrôlable en Wi-Fi, et permettent de faire de nombreuses choses : prendre toutes les couleurs, changer d'intensité, flasher, etc...
 <h3>Le logiciel</h3>
-Après une première version de Gladys sortie en Avril 2014, Gladys revient avec une toute nouvelle version, totalement réécrite !
+Après une première version de Huby sortie en Avril 2014, Huby revient avec une toute nouvelle version, totalement réécrite !
 <p>
 Cette version est écrite en 100% Node.js, avec côté serveur le framework Sails.js, et côté client le framework AngularJS.
 </p>
