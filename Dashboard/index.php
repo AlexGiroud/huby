@@ -64,61 +64,33 @@
  <?php include "chart.php" ; ?>
 					<div class="content">
 						<h2>Nombre de visiteurs : <a><?php echo '<a id="nbVisiteur"></a>';?></a></h2>
-						<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
+						<p></p>
 						
 					</div>
 					</article>
 				</div>
 			</section>
 
-			<section id="two" class="wrapper special">
+			<!--<section id="two" class="wrapper special">
 				<div class="inner">
 					<header class="major narrow">
 						<h2>Aliquam Blandit Mauris</h2>
 						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
 					</header>
 					<div class="image-grid">
-						<!--<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
 						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
-						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>-->
-						<div id="images-box">
-							<div class="holder">
-								<div id="image-1" class="image-lightbox">
-									<span class="close"><a href="#">X</a></span>
-									<img src="images/huby.jpg" alt="earth!">
-									<a class="expand" href="#image-1"></a>
-								</div>
-							</div>
-							<div class="holder">
-								<div id="image-2" class="image-lightbox">
-									<span class="close"><a href="#">X</a></span>
-									<img src="images/2.jpg" alt="earth!">
-									<a class="expand" href="#image-2"></a>
-								</div>
-							</div>
-							<div class="holder">
-								<div id="image-3" class="image-lightbox">
-									<span class="close"><a href="#">X</a></span>
-
-									<img src="images/3.jpg" alt="earth!">
-									<a class="expand" href="#image-3"></a>
-													</div>
-							</div>
-						</div>
+						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
+						<a href="#" class="image"><img src="http://placehold.it/225x150" alt="" /></a>
+						
 					</div>
 					
 				</div>
-			</section>
-
-
-
-
-
+			</section> -->
 
 <?php
 /*

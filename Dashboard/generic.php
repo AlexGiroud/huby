@@ -64,9 +64,7 @@
 					<p>
 						Comment savoir si une personne est présente ? Rien de mieux qu'un lecteur de puce RFID pour détecter les entrées et sorties, et donc la présence d'un utilisateur.
 					</p>
-					<p>
-						Pour la consomation de l'électricitéAu niveau de la réception, elle se fait avec un récepteur 433Mhz branché à un arduino, qui prévient Huby via le port USB du Raspberry lorqu'il y a un mouvement.
-					</p>
+					
 				</div>
 			</section>
 
