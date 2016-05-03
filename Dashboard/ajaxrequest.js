@@ -46,4 +46,45 @@ function hahaha(){
             $('#nbsortie').text(nbsortie);
         }
     });
+    $.ajax({
+        url: '../PHP_FILES/SelectedPeriodStats.php',
+        type: 'get',
+        data: {'start': '01-01-2015', 'end': '30-12-2016', 'flow': 'chartin'},
+        success: function(data, status) {
+            var result = JSON.parse(data);
+            var Data = [];
+            $.each(result, function (key, value){
+                var temp = value["dt"].split("-");
+                Data.push({x: new Date(temp[0],temp[1]), y: parseInt(value["entries"])});
+            });
+            chart(Data);
+        }
+    });
+
+
+}
+function chart (data) {
+    var chart = new CanvasJS.Chart("chartContainer",
+        {
+            title:{
+                text: "Nombre d'entrées"
+            },
+            animationEnabled: false,
+            axisY:{
+                includeZero: false,
+                interval: 2
+            },
+
+            data: [
+                {
+                    type: "stepLine",
+                    toolTipContent: "{x}: {y}%",
+                    markerSize: 5,
+                    dataPoints: data
+                }
+
+            ]
+        });
+
+    chart.render();
 }

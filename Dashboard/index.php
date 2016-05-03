@@ -58,7 +58,9 @@
 
 		</script>
 		<article class="feature right">
-			<?php include "chart.php" ; ?>
+<!--			<//?php //include "chart.php" ; ?> -->
+			<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
 			<div class="content">
 				<h2>Nombre d'entrée : <b id="nbentree"></b> (depuis lancement : <b id="nbentreetotal"></b>)</h2>
 				<h2>Nombre de sortie : <b id="nbsortie"></b>(depuis lancement : <b id="nbsortietotal"></b>)</h2>
@@ -230,6 +232,7 @@ if (($err_formulaire) || (!isset($_POST['envoi'])))
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/canvasjs.min.js"></script>
 <footer id="footer">
 	<div class="inner">
 		<p class="pull-right"><a href="#">Remonter en haut</a></p>

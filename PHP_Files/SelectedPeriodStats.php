@@ -50,6 +50,13 @@ if($validDate == true) {
             break;
         case "out":
             $queryString = "SELECT * from Exit where Date between '".$dateStart."' and '".$dateEnd."' order by `Date` asc";
+            break;
+        case "chartin":
+            $queryString = "SELECT COUNT(1) AS entries, strftime('%Y-%m',Date) as dt FROM Entry GROUP BY strftime('%Y-%m',Date);";
+            break;
+        case "chartout":
+            $queryString = "SELECT COUNT(1) AS entries, strftime('%Y-%m',Date) as dt FROM Exit GROUP BY strftime('%Y-%m',Date);";
+            break;
     }
     $PDOresult = $huby_db->query($queryString);
 
