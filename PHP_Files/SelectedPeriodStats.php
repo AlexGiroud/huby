@@ -54,7 +54,7 @@ if($validDate == true) {
     $PDOresult = $huby_db->query($queryString);
 
     $result = $PDOresult->fetchAll();
-    var_dump($result);
+    //var_dump($result);
     $entry_list = json_encode($result);
     echo $entry_list;
 }

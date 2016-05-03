@@ -24,7 +24,7 @@
 						data.addRows([ [name, value]]);
 					});
 
-					var options = {
+                    var options = {
 						title : "Nombre de visite",
 						colorAxis: {colors: ['#54C492', '#cc0000']},
 						datalessRegionColor: '#dedede',
